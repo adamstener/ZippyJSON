@@ -15,6 +15,7 @@ extension ZippyJSONDecoder: TopLevelDecoder {
 
 typealias Value = JNTDecoderStorage
 
+@available(watchOS 3.0, *)
 fileprivate var _iso8601Formatter: JJLISO8601DateFormatter = {
     let formatter = JJLISO8601DateFormatter()
     formatter.formatOptions = .withInternetDateTime
@@ -74,6 +75,7 @@ public final class ZippyJSONDecoder {
         }
     }
 
+    @available(watchOS 3.0, *)
     public func decode<T : Decodable>(_ type: T.Type, from data: Data) throws -> T {
         if isOnSimulator() && !JNTHasVectorExtensions() {
           return try decodeWithAppleDecoder(type, from: data, reason: "This library was not compiled with the necessary vector extensions (this is likely because you're using SwiftPM + the simulator, and is due to limitations with SwiftPM. This does not apply to real devices.)")
@@ -118,6 +120,7 @@ public final class ZippyJSONDecoder {
         }
     }
 
+    @available(watchOS 3.0, *)
     func decodeWithAppleDecoder<T : Decodable>(_ type: T.Type, from data: Data, reason: String?) throws -> T {
         let appleDecoder = Foundation.JSONDecoder()
         appleDecoder.dataDecodingStrategy = ZippyJSONDecoder.convertDataDecodingStrategy(dataDecodingStrategy)
@@ -141,6 +144,7 @@ public final class ZippyJSONDecoder {
         }
     }
 
+    @available(watchOS 3.0, *)
     static func convertDateDecodingStrategy(_ strategy: ZippyJSONDecoder.DateDecodingStrategy) -> Foundation.JSONDecoder.DateDecodingStrategy {
         switch strategy {
         case .custom(let converter):
@@ -400,6 +404,7 @@ final private class __JSONDecoder: Decoder {
         return decimal
     }
 
+    @available(watchOS 3.0, *)
     fileprivate func unbox(_ value: Value, as type: Date.Type) throws -> Date {
         switch dateDecodingStrategy {
         case .deferredToDate:
