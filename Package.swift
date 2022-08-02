@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/michaeleisel/JJLISO8601DateFormatter", .upToNextMajor(from: "0.1.2")),
-        .package(url: "https://github.com/michaeleisel/ZippyJSONCFamily", .exact("1.2.4")),
+        .package(url: "https://github.com/adamstener/ZippyJSONCFamily", .branch("develop/adam/watchos")),
     ],
     targets: [
         .target(
