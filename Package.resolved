@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "JJLISO8601DateFormatter",
+        "repositoryURL": "https://github.com/michaeleisel/JJLISO8601DateFormatter",
+        "state": {
+          "branch": null,
+          "revision": "99fadf2e6425a0f827b1b485ea60bc2b7ecdd22c",
+          "version": "0.1.4"
+        }
+      },
+      {
+        "package": "ZippyJSONCFamily",
+        "repositoryURL": "https://github.com/adamstener/ZippyJSONCFamily",
+        "state": {
+          "branch": "develop/adam/watchos",
+          "revision": "0ec178ad4a47aae730214e0ed7c8e73870122c2c",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
